@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a3f3957-2904-40c9-bc32-bd3abc471e48" name="Changes" comment="" />
+    <list default="true" id="3a3f3957-2904-40c9-bc32-bd3abc471e48" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Library/BatallaPokemonFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfoInputs.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +64,7 @@
     <setting file="file://$PROJECT_DIR$/../Pokemones_perosnal/Pokemones_perosnal/TipoAire.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Pokemones_perosnal/Pokemones_perosnal/TipoFuego.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Pokemones_perosnal/Pokemones_perosnal/TipoTierra.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/BatallaPokemonFacade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/Pokemon.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>

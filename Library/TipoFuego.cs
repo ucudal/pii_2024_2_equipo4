@@ -1,6 +1,5 @@
 namespace DefaultNamespace;
 
-namespace Pokemones_personal;
 
 public class TipoFuego : ITipo
 {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/Program/Program.csproj": {}
+    "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\Program\\Program.csproj": {}
   },
   "projects": {
-    "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/Program/Program.csproj": {
+    "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\Program\\Program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/Program/Program.csproj",
+        "projectUniqueName": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\Program\\Program.csproj",
         "projectName": "Program",
-        "projectPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/Program/Program.csproj",
-        "packagesPath": "/Users/bruno/.nuget/packages/",
-        "outputPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/Program/obj/",
+        "projectPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\Program\\Program.csproj",
+        "packagesPath": "C:\\Users\\ricce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\Program\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bruno/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ricce\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\ricce\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

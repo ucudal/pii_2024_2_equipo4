@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_9_10_24,_09_53_[Changes]1" date="1728478435591" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Pokemon/.idea/shelf/Uncommitted_changes_before_Update_at_9_10_24,_09_53_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 9/10/24, 09:53 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="Program/obj/Debug/net8.0/Program.AssemblyInfoInputs.cache" />
+    <option name="AFTER_PATH" value="Program/obj/Debug/net8.0/Program.AssemblyInfoInputs.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Pokemon/.idea/shelf/Uncommitted_changes_before_Update_at_9_10_24,_09_53_[Changes]1/Program.AssemblyInfoInputs.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="Library/obj/Debug/net8.0/Library.AssemblyInfoInputs.cache" />
+    <option name="AFTER_PATH" value="Library/obj/Debug/net8.0/Library.AssemblyInfoInputs.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Pokemon/.idea/shelf/Uncommitted_changes_before_Update_at_9_10_24,_09_53_[Changes]1/Library.AssemblyInfoInputs.cache" />
+  </binary>
+</changelist>

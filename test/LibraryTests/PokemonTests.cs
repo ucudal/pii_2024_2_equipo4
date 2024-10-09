@@ -17,15 +17,30 @@ namespace Pokemones.Tests
             jugador2 = new Jugador("Jugador 2");
         }
 
-        // 1. Verificar que el jugador puede seleccionar 6 Pokémon.
+        // Verificar que el jugador puede seleccionar 6 Pokemon.
         [Test]
         public void Jugador_Selecciona6Pokemon_EquipoCompleto()
         {
             catalogo.SeleccionarPokemon(jugador1);
             Assert.That(jugador1.Pokemons.Count, Is.EqualTo(6), "El jugador debería tener 6 Pokémon en su equipo.");
         }
+        
+        // Verificar que el jugador no pueda seleccionar más de 6 Pokemon. 
+        [Test]
+        public void Jugador_NoPuedeSeleccionarMasDe6Pokemon()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                jugador1.AgregarPokemon(new Pokemon($"Pokemon {i}", 100, new TipoFuego()));
+            }
 
-        // 2. Verificar que si dos jugadores seleccionan el mismo Pokémon, sean objetos distintos.
+            // Intentar agregar un séptimo Pokémon
+            jugador1.AgregarPokemon(new Pokemon("ExtraPokemon", 100, new TipoFuego()));
+
+            Assert.That(jugador1.Pokemons.Count, Is.EqualTo(6), "El jugador no debería poder tener más de 6 Pokémon.");
+        }
+
+        // Verificar que si dos jugadores seleccionan el mismo Pokémon, sean objetos distintos.
         [Test]
         public void Jugadores_SeleccionanMismoPokemon_ObjetosDistintosConMismasPropiedades()
         {
@@ -45,7 +60,7 @@ namespace Pokemones.Tests
             Assert.That(pokemonJugador1, Is.Not.SameAs(pokemonJugador2), "Los Pokémon seleccionados deben ser objetos distintos en memoria.");
         }
 
-        // 3. Comprobar que los ataques comunes funcionan correctamente reduciendo el HP del oponente.
+        // Comprobar que los ataques comunes funcionan correctamente reduciendo el HP del oponente.
         [Test]
         public void AtaqueComun_ReduceHP_EnFuncionDeEfectividad()
         {
@@ -57,7 +72,7 @@ namespace Pokemones.Tests
             Assert.That(pokemonDefensor.HP, Is.EqualTo(75), "El HP del defensor debería reducirse correctamente.");
         }
 
-        // 5. Verificar que un ataque especial no se puede usar hasta que hayan pasado dos turnos del Pokémon.
+        // Verificar que un ataque especial no se puede usar hasta que hayan pasado dos turnos del Pokémon.
         [Test]
         public void AtaqueEspecial_NoPuedeSerUsadoHastaPasadosDosTurnos()
         {
@@ -73,7 +88,7 @@ namespace Pokemones.Tests
             Assert.That(pokemonAtacante.PuedeUsarAtaqueEspecial(), Is.True, "El ataque especial debería estar disponible después de dos ataques.");
         }
 
-        // 6. Comprobar que si se selecciona un ataque especial antes de que se permita, se muestra un mensaje de error.
+        // Comprobar que si se selecciona un ataque especial antes de que se permita, se muestra un mensaje de error.
         [Test]
         public void AtaqueEspecial_SeleccionadoAntesDeTiempo_MuestraMensajeError()
         {
@@ -90,7 +105,7 @@ namespace Pokemones.Tests
             }
         }
 
-        // 7. Comprobar que un jugador puede cambiar de Pokémon durante su turno.
+        // Comprobar que un jugador puede cambiar de Pokémon durante su turno.
         [Test]
         public void Jugador_PuedeCambiarPokemonEnSuTurno()
         {
@@ -105,7 +120,7 @@ namespace Pokemones.Tests
             Assert.That(jugador1.PokemonActivo(), Is.EqualTo(pokemon2), "El jugador debería poder cambiar de Pokémon en su turno.");
         }
 
-        // 8. Validar que si el Pokémon activo se queda sin vida, el cambio de Pokémon se realiza automáticamente.
+        // Validar que si el Pokémon activo se queda sin vida, el cambio de Pokémon se realiza automáticamente.
         [Test]
         public void CambioAutomaticoSiPokemonMuere()
         {
@@ -121,7 +136,7 @@ namespace Pokemones.Tests
             Assert.That(jugador1.PokemonActivo(), Is.EqualTo(pokemon2), "El cambio de Pokémon debería ser automático cuando el Pokémon activo muere.");
         }
 
-        // 9. Verificar que los puntos de vida de un Pokémon se muestran correctamente en el formato “actual/total”.
+        // Verificar que los puntos de vida de un Pokémon se muestran correctamente en el formato “actual/total”.
         [Test]
         public void MostrarVidaEnFormatoCorrecto()
         {
@@ -129,12 +144,84 @@ namespace Pokemones.Tests
             Assert.That(pokemon.MostrarVida(), Is.EqualTo("100/100"), "La vida debería mostrarse en el formato correcto.");
         }
 
-        // 10. Validar que cuando un Pokémon muere, no puede seguir atacando ni recibir ataques.
+        // Validar que cuando un Pokémon muere, no puede seguir atacando ni recibir ataques.
         [Test]
         public void PokemonMuerto_NoPuedeAtacarNiRecibirAtaques()
         {
             var pokemon = new Pokemon("Charmander", 0, new TipoFuego());
             Assert.That(pokemon.EstaVivo(), Is.False, "El Pokémon debería estar muerto y no poder atacar o recibir ataques.");
+        }
+        
+        // Verificar que un Pokémon no puede cambiar a si mismo
+        [Test]
+        public void Jugador_NoPuedeCambiarPokemonASiMismo()
+        {
+            var pokemon1 = new Pokemon("Charmander", 100, new TipoFuego());
+            var pokemon2 = new Pokemon("Squirtle", 100, new TipoAgua());
+
+            jugador1.AgregarPokemon(pokemon1);
+            jugador1.AgregarPokemon(pokemon2);
+
+            jugador1.CambiarPokemon(0);  // Tratar de cambiar al mismo Pokémon activo
+
+            Assert.That(jugador1.PokemonActivo(), Is.EqualTo(pokemon1), "El jugador no debería poder cambiar al mismo Pokémon activo.");
+        }
+        
+        
+        // Verificar ataque tipo fuego contra Pokémon tipo agua (efectividad)
+        [Test]
+        public void Ataque_TipoFuegoContraAgua_Inefectivo()
+        {
+            var pokemonAtacante = new Pokemon("Charmander", 100, new TipoFuego());
+            var pokemonDefensor = new Pokemon("Squirtle", 100, new TipoAgua());
+            var ataque = new Ataque("Llamarada", 50, false, new TipoFuego());
+
+            pokemonDefensor.RecibirAtaque(ataque);
+
+            // Fuego es menos efectivo contra Agua, el daño debe ser reducido (por ejemplo, a la mitad).
+            Assert.That(pokemonDefensor.HP, Is.EqualTo(75), "El ataque de Fuego debería ser inefectivo contra un Pokémon de Agua.");
+        }
+        
+        // Verificar ataque tipo agua contra Pokémon tipo fuego (efectividad)
+        [Test]
+        public void Ataque_TipoAguaContraFuego_SuperEfectivo()
+        {
+            var pokemonAtacante = new Pokemon("Squirtle", 100, new TipoAgua());
+            var pokemonDefensor = new Pokemon("Charmander", 100, new TipoFuego());
+            var ataque = new Ataque("Hidro Bomba", 50, false, new TipoAgua());
+
+            pokemonDefensor.RecibirAtaque(ataque);
+
+            // Agua es súper efectivo contra Fuego, el daño debe ser aumentado (por ejemplo, al doble).
+            Assert.That(pokemonDefensor.HP, Is.EqualTo(0), "El ataque de Agua debería ser súper efectivo contra un Pokémon de Fuego.");
+        }
+        
+        // Verificar ataque tipo tierra contra Pokémon tipo aire (efectividad)
+        [Test]
+        public void Ataque_TipoTierraContraAire_Inefectivo()
+        {
+            var pokemonAtacante = new Pokemon("Geodude", 100, new TipoTierra());
+            var pokemonDefensor = new Pokemon("Pidgey", 100, new TipoAire());
+            var ataque = new Ataque("Terremoto", 50, false, new TipoTierra());
+
+            pokemonDefensor.RecibirAtaque(ataque);
+
+            // Tierra es menos efectivo contra Aire, el daño debe ser reducido.
+            Assert.That(pokemonDefensor.HP, Is.EqualTo(75), "El ataque de Tierra debería ser inefectivo contra un Pokémon de Aire.");
+        }
+        
+        // Verificar ataque tipo aire contra Pokémon tipo tierra (efectividad)
+        [Test]
+        public void Ataque_TipoAireContraTierra_SuperEfectivo()
+        {
+            var pokemonAtacante = new Pokemon("Pidgey", 100, new TipoAire());
+            var pokemonDefensor = new Pokemon("Geodude", 100, new TipoTierra());
+            var ataque = new Ataque("Ráfaga", 50, false, new TipoAire());
+
+            pokemonDefensor.RecibirAtaque(ataque);
+
+            // Aire es súper efectivo contra Tierra, el daño debe ser aumentado.
+            Assert.That(pokemonDefensor.HP, Is.EqualTo(0), "El ataque de Aire debería ser súper efectivo contra un Pokémon de Tierra.");
         }
     }
 }

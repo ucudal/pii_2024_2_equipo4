@@ -1,4 +1,6 @@
-namespace DefaultNamespace;
+using DefaultNamespace;
+
+namespace Pokemones_perosnal;
 
 public class Ataque
 {
@@ -15,4 +17,3 @@ public class Ataque
         Tipo = tipo;
     }
 }
-

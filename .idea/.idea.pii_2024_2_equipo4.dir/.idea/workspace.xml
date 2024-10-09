@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a3f3957-2904-40c9-bc32-bd3abc471e48" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Library/BatallaPokemonFacade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.pii_2024_2_equipo4.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.pii_2024_2_equipo4.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Folder.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Folder.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Catalogo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Catalogo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryTest/obj/Debug/net8.0/LibraryTest.AssemblyInfoInputs.cache" afterDir="false" />
     </list>
@@ -64,8 +66,13 @@
     <setting file="file://$PROJECT_DIR$/../Pokemones_perosnal/Pokemones_perosnal/TipoAire.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Pokemones_perosnal/Pokemones_perosnal/TipoFuego.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Pokemones_perosnal/Pokemones_perosnal/TipoTierra.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/Ataque.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/BatallaPokemonFacade.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/Catalogo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/ITipo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/Pokemon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/TipoAgua.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/TipoAire.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{

@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "invq2doBze88L4dgX3+ERnRdF3j3hpHjIUi0xLUMicr/I9/1sUS3/SVciMQleIo9pEU0uEe04UBmGKw75k/KNw==",
+  "dgSpecHash": "fmHDBGLOXnw5haGRlFIX/QVHx4GTddV0Ercl/tDmR+aTTY6y2WXEK07ufqcK8WlwPzoKab0K7iAxbnQYEUB/eA==",
   "success": true,
-  "projectFilePath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/test/LibraryTests/LibraryTests.csproj",
+  "projectFilePath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj",
   "expectedPackageFiles": [
-    "/Users/bruno/.nuget/packages/coverlet.msbuild/6.0.2/coverlet.msbuild.6.0.2.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/microsoft.codecoverage/17.11.1/microsoft.codecoverage.17.11.1.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/microsoft.net.test.sdk/17.11.1/microsoft.net.test.sdk.17.11.1.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/microsoft.testplatform.objectmodel/17.11.1/microsoft.testplatform.objectmodel.17.11.1.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/microsoft.testplatform.testhost/17.11.1/microsoft.testplatform.testhost.17.11.1.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/nunit/4.2.2/nunit.4.2.2.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/nunit3testadapter/4.6.0/nunit3testadapter.4.6.0.nupkg.sha512",
-    "/Users/bruno/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512"
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\coverlet.msbuild\\6.0.2\\coverlet.msbuild.6.0.2.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\microsoft.codecoverage\\17.11.1\\microsoft.codecoverage.17.11.1.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\microsoft.net.test.sdk\\17.11.1\\microsoft.net.test.sdk.17.11.1.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.11.1\\microsoft.testplatform.objectmodel.17.11.1.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\microsoft.testplatform.testhost\\17.11.1\\microsoft.testplatform.testhost.17.11.1.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\nunit\\4.2.2\\nunit.4.2.2.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\nunit3testadapter\\4.6.0\\nunit3testadapter.4.6.0.nupkg.sha512",
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
   ],
   "logs": []
 }

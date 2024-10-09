@@ -6,7 +6,7 @@ Uno de los **mayores desafíos** fue asegurarnos de que todas las clases respeta
 
 Otro desafío fue implementar correctamente el **polimorfismo** y el uso de **interfaces** en el sistema de tipos de Pokémon. Asegurar que los diferentes tipos pudieran interactuar de manera flexible y que la efectividad de los ataques se pudiera calcular sin romper el **principio de sustitución de Liskov (LSP)** también fue complicado. Fue necesario reestructurar algunas partes del código para que cada tipo de Pokémon implementara la interfaz `ITipo` y pudiera calcular la efectividad de los ataques de manera intercambiable.
 
-> ⚠️ **Warning:** No aplicar correctamente LSP puede causar que el código no sea reutilizable o que aparezcan errores inesperados cuando cambias el tipo de un objeto. ¡Cuidado con las interfaces mal implementadas!
+> ⚠️ **Warning:** No aplicar correctamente LSP puede causar que el código no sea reutilizable o que aparezcan errores inesperados cuando cambias el tipo de un objeto.
 
 ## **Aprendizajes fuera de la currícula:**
 
@@ -20,7 +20,7 @@ Para la implementación de esto utilizamos la documentación enviada por los doc
 
 Este proyecto nos dio una **visión profunda** de la importancia de un diseño adecuado en aplicaciones más grandes. Empezamos con una estructura de código mucho más rígida y compleja, pero a medida que fuimos aplicando los principios de diseño, nos dimos cuenta de lo mucho que mejoraba la calidad del código en términos de legibilidad, mantenibilidad y extensibilidad.
 
-> **Tip:** ¡Planificación es clave! Pensar en las interacciones entre las clases desde el principio te puede ahorrar muchas refactorizaciones costosas después.
+> **Tip:** ¡La planificación es clave! Pensar en las interacciones entre las clases desde el principio nos puede ahorrar muchas refactorizaciones costosas después.
 
 Además, entendimos que el diseño orientado a objetos va más allá de solo usar clases e interfaces. Se trata de pensar cuidadosamente en las responsabilidades de cada parte del sistema y en cómo interactúan entre sí de manera eficiente. El uso de **patrones de diseño** no es simplemente un ejercicio académico, sino una **herramienta práctica** para crear software que funcione de manera sólida y flexible, incluso en escenarios complejos.
 

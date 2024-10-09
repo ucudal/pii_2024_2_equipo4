@@ -1,3 +1,5 @@
+using Pokemones_perosnal;
+
 namespace DefaultNamespace;
 
 public class Pokemon

@@ -1,0 +1,5 @@
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.AssemblyInfoInputs.cache
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.AssemblyInfo.cs
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.csproj.CoreCompileInputs.cache
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.sourcelink.json

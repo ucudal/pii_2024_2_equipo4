@@ -3,3 +3,11 @@
 /Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.AssemblyInfo.cs
 /Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.csproj.CoreCompileInputs.cache
 /Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.sourcelink.json
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/bin/Debug/net8.0/Library.deps.json
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/bin/Debug/net8.0/Library.dll
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/bin/Debug/net8.0/Library.pdb
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/bin/Debug/net8.0/Library.xml
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.dll
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/refint/Library.dll
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/Library.pdb
+/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/obj/Debug/net8.0/ref/Library.dll

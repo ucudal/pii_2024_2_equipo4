@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\": {}
+    "/Users/bruno/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\src\\Program\\Program.csproj",
+      "projectUniqueName": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Program/Program.csproj",
       "projectName": "Program",
-      "projectPath": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\src\\Program\\Program.csproj",
-      "packagesPath": "C:\\Users\\Estudiante UCU\\.nuget\\packages\\",
-      "outputPath": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\src\\Program\\obj\\",
+      "projectPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Program/Program.csproj",
+      "packagesPath": "/Users/bruno/.nuget/packages/",
+      "outputPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Program/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Estudiante UCU\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/bruno/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -51,8 +51,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
-              "projectPath": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\src\\Library\\Library.csproj"
+            "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/Library.csproj": {
+              "projectPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/Library.csproj"
             }
           }
         }
@@ -61,11 +61,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -87,7 +82,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

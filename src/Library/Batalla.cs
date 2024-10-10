@@ -1,109 +1,114 @@
-﻿namespace Library
+﻿using Library;
+
+namespace Pokemones_personal;
+
+public class Batalla
 {
-    public class Batalla
+    private Jugador jugador1;
+    private Jugador jugador2;
+    private int turno;
+
+    public Batalla(Jugador j1, Jugador j2)
     {
-        private Jugador Jugador1;
-        private Jugador Jugador2;
-        private int turnoActual;
+        jugador1 = j1;
+        jugador2 = j2;
+        turno = 1;
+    }
 
-        public Batalla(Jugador jugador1, Jugador jugador2)
+    public void IniciarBatalla()
+    {
+        Console.WriteLine("¡La batalla ha comenzado!");
+        MostrarEstado();
+    }
+
+    public void TurnoJugador()
+    {
+        Jugador atacante = (turno % 2 != 0) ? jugador1 : jugador2;
+        Jugador defensor = (turno % 2 != 0) ? jugador2 : jugador1;
+
+        Console.WriteLine($"{atacante.Nombre}, es tu turno. ¿Qué deseas hacer?");
+        Console.WriteLine("1. Atacar");
+        Console.WriteLine("2. Cambiar Pokémon");
+
+        string accion = Console.ReadLine();
+
+        if (accion == "1")
         {
-            this.Jugador1 = jugador1;
-            this.Jugador2 = jugador2;
-            this.turnoActual = 1; // comienza el jugador 1
-        }
-
-        public Jugador JugadorActual()
-        {
-            return turnoActual == 1 ? Jugador1 : Jugador2;
-        }
-
-        public void CambiarTurno()
-        {
-            turnoActual = turnoActual == 1 ? 2 : 1;
-        }
-
-        public void IniciarBatalla()
-        {
-            Console.WriteLine("¡La batalla ha comenzado!");
-            MostrarEstado();
-        }
-
-        public void TurnoJugador()
-        {
-            Jugador atacante = JugadorActual();
-            Jugador defensor = turnoActual == 1 ? Jugador2 : Jugador1;
-
-            Console.WriteLine($"{atacante.Nombre}, es tu turno. ¿Qué deseas hacer?");
-            Console.WriteLine("1. Atacar");
-            Console.WriteLine("2. Cambiar Pokémon");
-
-            string accion = Console.ReadLine();
-
-            switch (accion)
+            // Atacar
+            Console.WriteLine("Selecciona un ataque:");
+            for (int i = 0; i < atacante.PokemonActivo().Ataques.Count; i++)
             {
-                case "1":
-                    Atacar(atacante, defensor);
-                    break;
-                case "2":
-                    CambiarPokemon(atacante);
-                    break;
-                default:
-                    Console.WriteLine("Opción inválida. Pierdes el turno.");
-                    break;
+                Console.WriteLine($"{i + 1}. {atacante.PokemonActivo().Ataques[i].Nombre}");
             }
 
-            CambiarTurno();
-        }
+            int seleccionAtaque = Convert.ToInt32(Console.ReadLine()) - 1;
+            Ataque ataqueSeleccionado = atacante.PokemonActivo().Ataques[seleccionAtaque];
+            Console.WriteLine($"{atacante.PokemonActivo().Nombre} usó {ataqueSeleccionado.Nombre}!");
 
-        public void Atacar(Jugador atacante, Jugador defensor)
-        {
-            Console.WriteLine($"{atacante.Nombre}, elige un ataque:");
-            for (int i = 0; i < atacante.Ataques.Count; i++)
+            defensor.PokemonActivo().RecibirAtaque(ataqueSeleccionado);
+
+            if (!defensor.PokemonActivo().EstaVivo())
             {
-                Ataque ataque = atacante.Ataques[i];
-                Console.WriteLine($"{i + 1}. {ataque.Nombre} (Ataque: {ataque.ValorAtaque}, Especial: {ataque.Especial})");
-            }
+                Console.WriteLine($"{defensor.PokemonActivo().Nombre} ha muerto.");
 
-            int opcion = int.Parse(Console.ReadLine()) - 1;
-            Ataque ataqueElegido = atacante.Ataques[opcion];
-
-            Console.WriteLine($"{atacante.Nombre} usa {ataqueElegido.Nombre} contra {defensor.Nombre}.");
-            defensor.HP -= ataqueElegido.ValorAtaque;
-
-            MostrarEstado();
-
-            if(Jugador1.PokemonsVivos()==0 || Jugador2.PokemonsVivos()==0)
-            {
-                VerGanador();
+                // Cambia automáticamente al siguiente Pokémon vivo si el actual muere.
+                if (defensor.PokemonsVivos() > 0)
+                {
+                    defensor.CambiarPokemonAutomaticamente();
+                }
+                else
+                {
+                    Console.WriteLine($"{atacante.Nombre} ha ganado la batalla. ¡No quedan más Pokémon vivos en el equipo de {defensor.Nombre}!");
+                    return;
+                }
             }
         }
-
-        private void CambiarPokemon(Jugador atacante)
+        else if (accion == "2")
         {
+            // Cambiar Pokémon manualmente
             Console.WriteLine("Selecciona el Pokémon al que quieres cambiar:");
             atacante.MostrarPokemonsDisponibles();
 
             int seleccionPokemon = Convert.ToInt32(Console.ReadLine()) - 1;
             atacante.CambiarPokemon(seleccionPokemon);
         }
-
-        public void MostrarEstado()
-        {   
-            Console.WriteLine($"{Jugador1.Nombre} tiene {Jugador1.PokemonsVivos} Pokémon vivos.");
-            Console.WriteLine($"{Jugador2.Nombre} tiene {Jugador2.PokemonsVivos} Pokémon vivos.");
+        else
+        {
+            Console.WriteLine("Opción inválida. Pierdes el turno.");
         }
 
-        public void VerGanador()
+        turno++;
+        CambiarTurno();
+    }
+
+    public void CambiarTurno()
+    {
+        Console.WriteLine($"Turno {turno} completado.");
+    }
+
+    public void MostrarEstado()
+    {
+        Console.WriteLine("Estado de la batalla:");
+        jugador1.MostrarPokemonsDisponibles();
+        jugador2.MostrarPokemonsDisponibles();
+    }
+
+    public bool VerGanador()
+    {
+        if (jugador1.PokemonsVivos() == 0)
         {
-            if (Jugador1.PokemonsVivos == 0)
-            {
-                Console.WriteLine($"El jugador {Jugador2.Nombre} vencio {Jugador1.Nombre}.");
-            }
-            else if (Jugador2.PokemonsVivos == 0)
-            {
-                Console.WriteLine($"El jugador {Jugador1.Nombre} vencio {Jugador2.Nombre}.");
-            }
+            Console.WriteLine($"{jugador2.Nombre} ha ganado la batalla.");
+            return true;
+        }
+        else if (jugador2.PokemonsVivos() == 0)
+        {
+            Console.WriteLine($"{jugador1.Nombre} ha ganado la batalla.");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine("La batalla continúa.");
+            return false;
         }
     }
 }

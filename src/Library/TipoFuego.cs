@@ -8,12 +8,12 @@ public class TipoFuego : ITipo
     {
         if (tipoAtaque is TipoAgua or TipoAire)
         {
-            return 0.5;  // Fuego es débil contra Agua.
+            return 1.5;  // Fuego es débil contra Agua.
         }
 
         if (tipoAtaque is TipoTierra)
         {
-            return 1.25;  // Fuego tiene una ligera ventaja sobre Tierra.
+            return 0.5;  // Fuego tiene una ligera ventaja sobre Tierra.
         }
         // Valor por defecto si el tipo no es uno de los anteriores
         return 1.0;  // Neutral si no se cumple ninguna de las condiciones anteriores.

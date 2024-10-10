@@ -8,18 +8,15 @@ public class TipoAgua : ITipo
     {
         if (tipoAtaque is TipoTierra)
         {
-            return 0.5;  // Agua es débil contra Planta.
+            return 1.25;  // Agua es débil contra Planta.
         }
 
         if (tipoAtaque is TipoFuego)
         {
-            return 2.0;  // Agua es fuerte contra Fuego.
+            return 0.5;  // Agua es fuerte contra Fuego.
         }
-
-        if (tipoAtaque is TipoTierra)
-        {
-            return 1.25;  // Agua tiene ventaja sobre Tierra.
-        }
+        
+        
 
         return 1.0;  // Neutral por defecto.
     }

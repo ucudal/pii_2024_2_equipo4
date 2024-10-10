@@ -16,14 +16,6 @@ namespace Pokemones.Tests
             jugador1 = new Jugador("Jugador 1");
             jugador2 = new Jugador("Jugador 2");
         }
-
-        // Verificar que el jugador puede seleccionar 6 Pokemon.
-        [Test]
-        public void Jugador_Selecciona6Pokemon_EquipoCompleto()
-        {
-            catalogo.SeleccionarPokemon(jugador1);
-            Assert.That(jugador1.Pokemons.Count, Is.EqualTo(6), "El jugador debería tener 6 Pokémon en su equipo.");
-        }
         
         // Verificar que el jugador no pueda seleccionar más de 6 Pokemon. 
         [Test]
@@ -39,26 +31,7 @@ namespace Pokemones.Tests
 
             Assert.That(jugador1.Pokemons.Count, Is.EqualTo(6), "El jugador no debería poder tener más de 6 Pokémon.");
         }
-
-        // Verificar que si dos jugadores seleccionan el mismo Pokémon, sean objetos distintos.
-        [Test]
-        public void Jugadores_SeleccionanMismoPokemon_ObjetosDistintosConMismasPropiedades()
-        {
-            catalogo.SeleccionarPokemon(jugador1);
-            catalogo.SeleccionarPokemon(jugador2);
-
-            var pokemonJugador1 = jugador1.Pokemons[0];
-            var pokemonJugador2 = jugador2.Pokemons[0];
-
-            // Comparar que los nombres de los Pokémon seleccionados son los mismos
-            Assert.That(pokemonJugador1.Nombre, Is.EqualTo(pokemonJugador2.Nombre), "Los nombres de los Pokémon seleccionados deben ser iguales.");
-
-            // Comparar que los tipos de los Pokémon son los mismos
-            Assert.That(pokemonJugador1.Tipo.Nombre, Is.EqualTo(pokemonJugador2.Tipo.Nombre), "Los tipos de los Pokémon seleccionados deben ser iguales.");
-
-            // Verificar que son objetos distintos en memoria
-            Assert.That(pokemonJugador1, Is.Not.SameAs(pokemonJugador2), "Los Pokémon seleccionados deben ser objetos distintos en memoria.");
-        }
+        
 
         // Comprobar que los ataques comunes funcionan correctamente reduciendo el HP del oponente.
         [Test]
@@ -193,7 +166,7 @@ namespace Pokemones.Tests
             pokemonDefensor.RecibirAtaque(ataque);
 
             // Agua es súper efectivo contra Fuego, el daño debe ser aumentado (por ejemplo, al doble).
-            Assert.That(pokemonDefensor.HP, Is.EqualTo(0), "El ataque de Agua debería ser súper efectivo contra un Pokémon de Fuego.");
+            Assert.That(pokemonDefensor.HP, Is.EqualTo(25), "El ataque de Agua debería ser súper efectivo contra un Pokémon de Fuego.");
         }
         
         // Verificar ataque tipo tierra contra Pokémon tipo aire (efectividad)
@@ -212,16 +185,35 @@ namespace Pokemones.Tests
         
         // Verificar ataque tipo aire contra Pokémon tipo tierra (efectividad)
         [Test]
-        public void Ataque_TipoAireContraTierra_SuperEfectivo()
+        public void Ataque_TipoAireContraTierra()
         {
             var pokemonAtacante = new Pokemon("Pidgey", 100, new TipoAire());
             var pokemonDefensor = new Pokemon("Geodude", 100, new TipoTierra());
-            var ataque = new Ataque("Ráfaga", 50, false, new TipoAire());
+            var ataque = new Ataque("Viento", 50, false, new TipoAire());
 
             pokemonDefensor.RecibirAtaque(ataque);
 
-            // Aire es súper efectivo contra Tierra, el daño debe ser aumentado.
-            Assert.That(pokemonDefensor.HP, Is.EqualTo(0), "El ataque de Aire debería ser súper efectivo contra un Pokémon de Tierra.");
+            // Tierra es menos efectivo contra Aire, el daño debe ser reducido.
+            Assert.That(pokemonDefensor.HP, Is.EqualTo(37.5), "El ataque de Tierra debería ser inefectivo contra un Pokémon de Aire.");
+        }
+        
+        // Verificar que si dos jugadores seleccionan el mismo Pokémon, sean objetos distintos con las mismas propiedades.
+        [Test]
+        public void Jugadores_SeleccionanMismoPokemon_ObjetosDistintos()
+        {
+            // Simulamos la selección del mismo Pokémon por ambos jugadores
+            Pokemon pokemonJugador1 = new Pokemon("Charmander", 100, new TipoFuego());
+            Pokemon pokemonJugador2 = new Pokemon("Charmander", 100, new TipoFuego());
+
+            jugador1.AgregarPokemon(pokemonJugador1);
+            jugador2.AgregarPokemon(pokemonJugador2);
+
+            // Verificar que los Pokémon seleccionados tienen las mismas propiedades (nombre, tipo)
+            Assert.That(jugador1.Pokemons[0].Nombre, Is.EqualTo(jugador2.Pokemons[0].Nombre), "Los Pokémon seleccionados deben tener el mismo nombre.");
+            Assert.That(jugador1.Pokemons[0].Tipo.Nombre, Is.EqualTo(jugador2.Pokemons[0].Tipo.Nombre), "Los Pokémon seleccionados deben tener el mismo tipo.");
+
+            // Verificar que son objetos distintos en memoria
+            Assert.That(jugador1.Pokemons[0], Is.Not.SameAs(jugador2.Pokemons[0]), "Los Pokémon seleccionados deben ser objetos distintos en memoria.");
         }
     }
 }

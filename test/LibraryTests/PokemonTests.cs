@@ -215,5 +215,37 @@ namespace Pokemones.Tests
             // Verificar que son objetos distintos en memoria
             Assert.That(jugador1.Pokemons[0], Is.Not.SameAs(jugador2.Pokemons[0]), "Los Pokémon seleccionados deben ser objetos distintos en memoria.");
         }
+        
+        // Verificación ataques especiales
+        [Test]
+        public void AtaqueEspecial_SoloPuedeUsarseCadaDosTurnos()
+        {
+            var pokemonAtacante = new Pokemon("Charmander", 100, new TipoFuego());
+            var pokemonDefensor = new Pokemon("Squirtle", 100, new TipoAgua());
+            var ataqueEspecial = new Ataque("Explosión Solar", 90, true, new TipoFuego());
+
+            pokemonAtacante.Ataques.Add(ataqueEspecial);
+
+            // Primer ataque - no debería poder usar el ataque especial aún
+            Assert.That(pokemonAtacante.PuedeUsarAtaqueEspecial(), Is.False, "El ataque especial no debería estar disponible en el primer turno.");
+    
+            // Simular dos turnos con ataques normales
+            pokemonAtacante.IncrementarContadorAtaques(); // Turno 1
+            pokemonAtacante.IncrementarContadorAtaques(); // Turno 2
+
+            // Ahora debería poder usar el ataque especial
+            Assert.That(pokemonAtacante.PuedeUsarAtaqueEspecial(), Is.True, "El ataque especial debería estar disponible después de dos turnos.");
+
+            // Realizar el ataque especial y verificar que no puede ser usado nuevamente de inmediato
+            pokemonAtacante.UsarAtaqueEspecial();
+            Assert.That(pokemonAtacante.PuedeUsarAtaqueEspecial(), Is.False, "Después de usar un ataque especial, no debería estar disponible inmediatamente.");
+    
+            // Simular dos turnos adicionales
+            pokemonAtacante.IncrementarContadorAtaques(); // Turno 3
+            pokemonAtacante.IncrementarContadorAtaques(); // Turno 4
+
+            // Verificar nuevamente que el ataque especial está disponible
+            Assert.That(pokemonAtacante.PuedeUsarAtaqueEspecial(), Is.True, "El ataque especial debería estar disponible nuevamente después de dos turnos.");
+        }
     }
 }

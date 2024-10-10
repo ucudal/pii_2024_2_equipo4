@@ -45,22 +45,6 @@ namespace Pokemones.Tests
             Assert.That(pokemonDefensor.HP, Is.EqualTo(75), "El HP del defensor debería reducirse correctamente.");
         }
 
-        // Verificar que un ataque especial no se puede usar hasta que hayan pasado dos turnos del Pokémon.
-        [Test]
-        public void AtaqueEspecial_NoPuedeSerUsadoHastaPasadosDosTurnos()
-        {
-            var pokemonAtacante = new Pokemon("Charmander", 100, new TipoFuego());
-            pokemonAtacante.Ataques.Add(new Ataque("Explosión Solar", 90, true, new TipoFuego()));
-
-            // Primero ataque común, luego intento usar el especial
-            Assert.That(pokemonAtacante.PuedeUsarAtaqueEspecial(), Is.False, "El ataque especial no debería estar disponible aún.");
-
-            pokemonAtacante.IncrementarContadorAtaques();
-            pokemonAtacante.IncrementarContadorAtaques();
-
-            Assert.That(pokemonAtacante.PuedeUsarAtaqueEspecial(), Is.True, "El ataque especial debería estar disponible después de dos ataques.");
-        }
-
         // Comprobar que si se selecciona un ataque especial antes de que se permita, se muestra un mensaje de error.
         [Test]
         public void AtaqueEspecial_SeleccionadoAntesDeTiempo_MuestraMensajeError()

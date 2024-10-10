@@ -771,19 +771,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/bruno/.nuget/packages/": {}
+    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/test/LibraryTests/LibraryTests.csproj",
+      "projectUniqueName": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj",
       "projectName": "LibraryTests",
-      "projectPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/test/LibraryTests/LibraryTests.csproj",
-      "packagesPath": "/Users/bruno/.nuget/packages/",
-      "outputPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/test/LibraryTests/obj/",
+      "projectPath": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj",
+      "packagesPath": "C:\\Users\\Estudiante UCU\\.nuget\\packages\\",
+      "outputPath": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\test\\LibraryTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/bruno/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Estudiante UCU\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -795,8 +795,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/Library.csproj": {
-              "projectPath": "/Users/bruno/Facultad/SEGUNDO_SEMESTRE/Programacion2/Proyecto/pii_2024_2_equipo4/src/Library/Library.csproj"
+            "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
+              "projectPath": "C:\\Estudio\\Programacion\\Trabajos grupales\\ProyectoFinal\\pii_2024_2_equipo4\\src\\Library\\Library.csproj"
             }
           }
         }
@@ -805,6 +805,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -846,7 +851,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

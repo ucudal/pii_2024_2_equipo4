@@ -6,10 +6,10 @@ public class Pokemon
     public double HP { get; set; }
     public double HPMax { get; set; }
     public List<Ataque> Ataques { get; set; }
-    public ITipo Tipo { get; set; }
+    public Tipo Tipo { get; set; }
     private int contadorAtaques = 0;  // Contador para los turnos de ataque
 
-    public Pokemon(string nombre, double hp, ITipo tipo)
+    public Pokemon(string nombre, double hp, Tipo tipo)
     {
         Nombre = nombre;
         HP = hp;
@@ -39,7 +39,7 @@ public class Pokemon
     // Método para recibir ataques y reducir HP
     public void RecibirAtaque(Ataque ataque)
     {
-        double efectividad = Tipo.CalcularAtaqueEfectivo(ataque.Tipo);
+        double efectividad = this.Tipo.CalcularAtaqueEfectivo(ataque.Tipo);
         double ataqueEfectivo = ataque.ValorAtaque * efectividad;
         if (ataqueEfectivo < HP)
         {

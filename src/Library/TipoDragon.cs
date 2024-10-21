@@ -8,7 +8,7 @@ public class TipoDragon : ITipo
     {
         if (tipoAtaque is TipoDragon or TipoHielo)
         {
-            return 1.5;  // Dragón es débil contra Dragón y Hielo.
+            return 2.0;  // Dragón es débil contra Dragón y Hielo.
         }
 
         if (tipoAtaque is TipoAgua or TipoFuego or TipoElectrico or TipoPlanta)

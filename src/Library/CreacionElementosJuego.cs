@@ -41,7 +41,7 @@ public class CreacionElementosJuego
         var pokemons = new List<Pokemon>
         {
             // Tipo Fuego
-            new Pokemon("Charmander", 100, tipos["Fuego"]),
+            new Pokemon("Charmander", 100, tipos["Fueg0"]),
             new Pokemon("Vulpix", 95, tipos["Fuego"]),
             new Pokemon("Growlithe", 110, tipos["Fuego"]),
             new Pokemon("Ponyta", 100, tipos["Fuego"]),

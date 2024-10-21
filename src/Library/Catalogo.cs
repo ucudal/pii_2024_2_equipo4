@@ -1,7 +1,9 @@
+using Library.Interfaces;
+
 namespace Library;
 
 
-public class Catalogo
+public class Catalogo: ICatalogo
 {
     private List<Pokemon> pokemonsDisponibles;
 
@@ -199,7 +201,7 @@ public class Catalogo
         }
     }
 
-    public void SeleccionarPokemon(Jugador jugador)
+    public void SeleccionarPokemon(IJugador jugador)
     {
         Console.WriteLine($"Selecciona 6 Pokémon para tu equipo, {jugador.Nombre}.");
         VerCatalogo();

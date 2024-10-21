@@ -1,6 +1,8 @@
+using Library.Interfaces;
+
 namespace Library;
 
-public class Jugador
+public class Jugador: IJugador
 {
     public string Nombre { get; set; }
     public List<Pokemon> Pokemons { get; set; }
@@ -42,7 +44,7 @@ public class Jugador
     }
 
    // Método para atacar al oponente
-    public void Atacar(Jugador oponente, int indiceAtaque)
+    public void Atacar(IJugador oponente, int indiceAtaque)
     {
         Pokemon atacante = PokemonActivo();
         Pokemon oponentePokemon = oponente.PokemonActivo();

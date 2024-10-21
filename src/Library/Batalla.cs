@@ -1,14 +1,15 @@
 ﻿using Library;
+using Library.Interfaces;
 
 namespace Pokemones_personal
 {
-    public class Batalla
+    public class Batalla: IBatalla
     {
-        private Jugador jugador1;
-        private Jugador jugador2;
+        private IJugador jugador1;
+        private IJugador jugador2;
         private int turno;
 
-        public Batalla(Jugador j1, Jugador j2)
+        public Batalla(IJugador j1, IJugador j2)
         {
             jugador1 = j1;
             jugador2 = j2;
@@ -23,8 +24,8 @@ namespace Pokemones_personal
 
         public void TurnoJugador()
         {
-            Jugador atacante = (turno % 2 != 0) ? jugador1 : jugador2;
-            Jugador defensor = (turno % 2 != 0) ? jugador2 : jugador1;
+            IJugador atacante = (turno % 2 != 0) ? jugador1 : jugador2;
+            IJugador defensor = (turno % 2 != 0) ? jugador2 : jugador1;
 
             Console.WriteLine($"{atacante.Nombre}, es tu turno. ¿Qué deseas hacer?");
             Console.WriteLine("1. Atacar");

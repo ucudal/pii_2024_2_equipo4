@@ -1,0 +1,42 @@
+Explicación del diseño
+
+	1.	Clase Ataque
+	Función: Esta clase encapsula la información de cada ataque que un Pokémon puede realizar. Contiene el nombre, el valor de ataque, si es especial, y el tipo.
+	Justificación:
+	SRP: Ataque tiene una única responsabilidad: representar un ataque. No maneja ninguna lógica adicional.
+	Expert: Almacenar y proporcionar acceso a los datos relacionados con los ataques es una tarea natural para esta clase, ya que es la experta en esa información.
+
+	2.	Clase Pokemon
+	Función: Representa un Pokémon, con su nombre, puntos de vida (HP), lista de ataques y su tipo. También contiene la lógica para recibir ataques y reducir HP.
+	Justificación:
+	SRP: El Pokemon se enfoca exclusivamente en manejar su propio estado, es decir, sus HP y la recepción de ataques.
+	Expert: Como experto en su propio estado, tiene la responsabilidad de aplicar el daño cuando recibe un ataque.
+	LSP y Polimorfismo: El tipo de Pokémon (ITipo) se utiliza para calcular la efectividad de los ataques. Este uso de una interfaz asegura que cualquier clase que implemente ITipo pueda ser intercambiada sin romper la funcionalidad, cumpliendo con LSP.
+
+	3.	Clase Jugador
+	Función: Controla el equipo de Pokémon de un jugador, permitiendo atacar, cambiar de Pokémon y verificar cuántos Pokémon quedan vivos.
+	Justificación:
+	SRP: Jugador se responsabiliza solo de gestionar los Pokémon del jugador, sin manejar lógica de batalla ni interacción directa con otros jugadores.
+	Expert: Jugador es quien tiene la responsabilidad de ejecutar acciones con sus Pokémon, como atacar o cambiar de Pokémon, porque es el experto en cómo manejar su propio equipo.
+	LSP y Polimorfismo: Al usar instancias de Pokemon, el Jugador no necesita conocer los detalles internos de los tipos de Pokémon, respetando el principio de sustitución de Liskov.
+
+	4.	Clase Catalogo
+	Función: Contiene una lista de Pokémon predefinidos y permite a los jugadores seleccionar Pokémon de este catálogo.
+	Justificación:
+	SRP: La clase Catalogo solo gestiona la creación y presentación de Pokémon disponibles para los jugadores. No maneja la batalla ni la lógica del jugador.
+	Expert: Como experta en la creación y presentación de Pokémon, la clase es la responsable adecuada para seleccionar Pokémon y asignar ataques.
+	LSP: Los jugadores seleccionan Pokémon del catálogo sin tener que preocuparse por los detalles de la implementación, permitiendo que se apliquen cambios sin afectar la funcionalidad.
+
+	5.	Clase Batalla
+	Función: Gestiona la lógica interna de la batalla, incluyendo el manejo de los turnos, la verificación de si hay un ganador, y la lógica de combate entre los jugadores.
+	Justificación:
+	SRP: La clase Batalla se enfoca solo en manejar la lógica interna de los turnos y la batalla. No se ocupa de interactuar con los jugadores o la consola directamente, lo que permite mantener su responsabilidad única.
+	Expert: Como experta en la lógica de la batalla, esta clase maneja los turnos y la verificación de condiciones de victoria.
+	LSP y Polimorfismo: Batalla puede manejar a diferentes jugadores y Pokémon sin necesidad de conocer los detalles específicos de cada Pokémon, permitiendo cumplir con el principio de sustitución de Liskov.
+
+	6.	Clase PokemonBattleFacade
+	Función: Actúa como una interfaz simple que coordina la selección de Pokémon, la creación de jugadores, y el manejo de la batalla. Facilita la interacción del programa con el sistema.
+	Justificación:
+	SRP: Esta clase se encarga exclusivamente de coordinar las interacciones de alto nivel, como la creación de jugadores, selección de Pokémon y la ejecución de la batalla. Delega la lógica específica a las clases correspondientes (Jugador, Batalla, etc.).
+	Expert: Como un coordinador de alto nivel, PokemonBattleFacade conoce cómo orquestar el proceso completo de la batalla sin involucrarse en los detalles de implementación.
+	LSP y Polimorfismo: Esta clase interactúa con varias clases a través de interfaces y abstracciones, asegurando que los detalles internos de cada clase puedan cambiar sin romper el flujo de la aplicación.

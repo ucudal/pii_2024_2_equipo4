@@ -1,18 +1,17 @@
-﻿using Library;
+using Library.Interfaces;
 
-namespace Pokemones_personal;
+namespace Library;
 
-public class Jugador
+public class Jugador: IJugador
 {
     public string Nombre { get; set; }
     public List<Pokemon> Pokemons { get; set; }
     public int IndicePokemon { get; set; } = 0;  // Indica el Pokémon activo
 
-    public Jugador(string nombre, int pokemonActivo)
+    public Jugador(string nombre)
     {
         Nombre = nombre;
         Pokemons = new List<Pokemon>();
-        IndicePokemon = pokemonActivo;
     }
 
     // Método para agregar Pokémon al equipo
@@ -24,7 +23,7 @@ public class Jugador
         }
         else
         {
-            Console.WriteLine("Ya tienes 6 Pokémones en tu equipo.");
+            Console.WriteLine("Ya tienes 6 Pokémon en tu equipo.");
         }
     }
 
@@ -45,7 +44,7 @@ public class Jugador
     }
 
    // Método para atacar al oponente
-    public void Atacar(Jugador oponente, int indiceAtaque)
+    public void Atacar(IJugador oponente, int indiceAtaque)
     {
         Pokemon atacante = PokemonActivo();
         Pokemon oponentePokemon = oponente.PokemonActivo();

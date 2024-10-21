@@ -16,6 +16,6 @@ public class TipoRoca:ITipo
         {
             return 0.5; // Es resistente contra estos tipos
         }
-        return 1.0;
+        return 1.0; //Daño natural
     }
 }

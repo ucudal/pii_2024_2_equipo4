@@ -6,16 +6,16 @@ public class TipoFuego : ITipo
 
     public double CalcularAtaqueEfectivo(ITipo tipoAtaque)
     {
-        if (tipoAtaque is TipoAgua or TipoAire)
+        if (tipoAtaque is TipoAgua or TipoRoca or TipoTierra)
         {
-            return 1.5;  // Fuego es débil contra Agua.
+            return 2.0;  // Fuego es débil contra Agua.
         }
-
-        if (tipoAtaque is TipoTierra)
+        
+        if (tipoAtaque is TipoBicho or TipoFuego or TipoPlanta)
         {
             return 0.5;  // Fuego tiene una ligera ventaja sobre Tierra.
         }
-        // Valor por defecto si el tipo no es uno de los anteriores
+        
         return 1.0;  // Neutral si no se cumple ninguna de las condiciones anteriores.
     }
 }

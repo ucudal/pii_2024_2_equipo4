@@ -6,12 +6,12 @@ public class TipoAgua : ITipo
 
     public double CalcularAtaqueEfectivo(ITipo tipoAtaque)
     {
-        if (tipoAtaque is TipoTierra)
+        if (tipoAtaque is TipoElectrico or TipoPlanta)
         {
-            return 1.25;  // Agua es débil contra Planta.
+            return 2.0;  // Agua es débil contra Planta.
         }
 
-        if (tipoAtaque is TipoFuego)
+        if (tipoAtaque is TipoFuego or TipoFuego or TipoLucha)
         {
             return 0.5;  // Agua es fuerte contra Fuego.
         }

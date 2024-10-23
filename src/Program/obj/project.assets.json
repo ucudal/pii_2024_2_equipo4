@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Estudiante UCU\\.nuget\\packages\\": {}
+    "C:\\Users\\ricce\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Program\\Program.csproj",
+      "projectUniqueName": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Program\\Program.csproj",
       "projectName": "Program",
-      "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Program\\Program.csproj",
-      "packagesPath": "C:\\Users\\Estudiante UCU\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Program\\obj\\",
+      "projectPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Program\\Program.csproj",
+      "packagesPath": "C:\\Users\\ricce\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Program\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Estudiante UCU\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ricce\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -51,8 +51,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
-              "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\Library.csproj"
+            "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
+              "projectPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\Library.csproj"
             }
           }
         }
@@ -82,8 +82,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\ricce\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Program\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

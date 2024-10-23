@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj": {}
+    "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
+    "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\Library.csproj",
+        "projectUniqueName": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\Estudiante UCU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\obj\\",
+        "projectPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\ricce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Estudiante UCU\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ricce\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -53,21 +53,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\ricce\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj": {
+    "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj",
+        "projectUniqueName": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj",
         "projectName": "LibraryTests",
-        "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj",
-        "packagesPath": "C:\\Users\\Estudiante UCU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\test\\LibraryTests\\obj\\",
+        "projectPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\test\\LibraryTests\\LibraryTests.csproj",
+        "packagesPath": "C:\\Users\\ricce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\test\\LibraryTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Estudiante UCU\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ricce\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -79,8 +79,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
-                "projectPath": "C:\\Users\\Estudiante UCU\\Desktop\\Trabajos\\pii_2024_2_equipo4\\src\\Library\\Library.csproj"
+              "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\Library.csproj": {
+                "projectPath": "C:\\Users\\ricce\\P2\\repositorios p2\\pii_2024_2_equipo4\\src\\Library\\Library.csproj"
               }
             }
           }
@@ -130,7 +130,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\ricce\\.dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -10,6 +10,7 @@ namespace Library
         {
             pokemonsDisponibles = new List<Pokemon>();
             InicializarPokemons();
+            Console.WriteLine("Trabajo de natu");
         }
 
         private void InicializarPokemons()  

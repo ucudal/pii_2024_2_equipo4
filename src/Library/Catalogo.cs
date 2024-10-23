@@ -10,6 +10,7 @@ namespace Library
         {
             pokemonsDisponibles = new List<Pokemon>();
             InicializarPokemons();
+            Console.WriteLine("cambio para probar pull request");
         }
 
         private void InicializarPokemons()  

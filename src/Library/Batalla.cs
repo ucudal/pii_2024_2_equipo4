@@ -27,7 +27,7 @@ namespace Pokemones_personal
             IJugador atacante = (turno % 2 != 0) ? jugador1 : jugador2;
             IJugador defensor = (turno % 2 != 0) ? jugador2 : jugador1;
 
-            Console.WriteLine($"{atacante.Nombre}, es tu turno. ¿Qué deseas hacer?");
+            Console.WriteLine($"{atacante.Nombre}, es tu turno. Tu pokemon en uso es: {atacante.PokemonActivo().Nombre} ¿Qué deseas hacer?");
             Console.WriteLine("1. Atacar");
             Console.WriteLine("2. Cambiar Pokémon");
 

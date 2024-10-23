@@ -44,54 +44,29 @@ public class Jugador: IJugador
     }
 
    // Método para atacar al oponente
-    public void Atacar(IJugador oponente, int indiceAtaque)
-    {
-        Pokemon atacante = PokemonActivo();
-        Pokemon oponentePokemon = oponente.PokemonActivo();
+   public void Atacar(IJugador oponente, int indiceAtaque)
+   {
+       Pokemon atacante = PokemonActivo();  // Pokémon del jugador que ataca
+       Pokemon defensor = oponente.PokemonActivo();  // Pokémon del oponente que defiende
 
-        if (indiceAtaque >= 0 && indiceAtaque < atacante.Ataques.Count)
-        {
-            Ataque ataqueSeleccionado = atacante.Ataques[indiceAtaque];
+       // Antes de atacar, se verifica si el atacante puede realizar el ataque (por efectos de estado como paralizado, dormido, etc.)
+       if (atacante.PuedeAtacar)
+       {
+           // Ejecutar el ataque seleccionado sobre el Pokémon defensor
+           atacante.EjecutarAtaque(defensor, indiceAtaque);
 
-            // Verificar si el ataque es especial
-            if (ataqueSeleccionado.Especial)
-            {
-                // Verificar si el Pokémon puede usar el ataque especial
-                if (atacante.PuedeUsarAtaqueEspecial())
-                {
-                    // Realizar el ataque especial
-                    Console.WriteLine($"{Nombre} ordena a {atacante.Nombre} usar {ataqueSeleccionado.Nombre} (Especial) contra {oponentePokemon.Nombre}.");
-                    oponentePokemon.RecibirAtaque(ataqueSeleccionado);
-                    atacante.UsarAtaqueEspecial();  // Resetear el contador de ataques especiales
-                }
-                else
-                {
-                    // Mostrar mensaje de que no se puede usar el ataque especial en este turno
-                    Console.WriteLine($"No puedes usar el ataque especial {ataqueSeleccionado.Nombre} en este turno. Debes realizar dos ataques normales antes de usar un ataque especial.");
-                    return;  // Detener la ejecución si no se puede usar el ataque especial
-                }
-            }
-            else
-            {
-                // Si el ataque no es especial, se realiza normalmente
-                Console.WriteLine($"{Nombre} ordena a {atacante.Nombre} usar {ataqueSeleccionado.Nombre} contra {oponentePokemon.Nombre}.");
-                oponentePokemon.RecibirAtaque(ataqueSeleccionado);
-                atacante.IncrementarContadorAtaques();  // Incrementar el contador de ataques normales
-            }
-
-            // Verificar si el Pokémon oponente ha muerto
-            if (!oponentePokemon.EstaVivo())
-            {
-                Console.WriteLine($"{oponentePokemon.Nombre} ha muerto.");
-                oponente.CambiarPokemonAutomaticamente();
-            }
-        }
-        else
-        {
-            Console.WriteLine("Índice de ataque inválido.");
-        }
-    }
-
+           // Verificar si el Pokémon defensor ha sido derrotado
+           if (!defensor.EstaVivo())
+           {
+               Console.WriteLine($"{defensor.Nombre} ha sido derrotado.");
+               oponente.CambiarPokemonAutomaticamente();  // Cambiar automáticamente al siguiente Pokémon vivo
+           }
+       }
+       else
+       {
+           Console.WriteLine($"{atacante.Nombre} no puede atacar este turno.");
+       }
+   }
     
     // Método para cambiar automáticamente al siguiente Pokémon vivo
     public void CambiarPokemonAutomaticamente()

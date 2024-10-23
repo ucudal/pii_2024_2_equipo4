@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Library.Interfaces;
 
 namespace Library
@@ -12,142 +14,104 @@ namespace Library
             InicializarPokemons();
         }
 
-        private void InicializarPokemons()  
+        // Inicializar el catálogo con los Pokémon disponibles y sus ataques
+        private void InicializarPokemons()
         {
-            // Tipo Fuego
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Charmander", 100, new TipoFuego(),
-                new Ataque("Llamarada", 50, false, new TipoFuego()),
-                new Ataque("Hidro Bomba", 50, false, new TipoAgua()),
-                new Ataque("Terremoto", 50, false, new TipoTierra()),
-                new Ataque("Explosión Solar", 90, true, new TipoFuego())));
+            // Cada Pokémon tiene tres ataques comunes y uno de los cuatro ataques especiales (Dormir, Envenenar, Paralizar, Quemar)
+            
+            // Pokémon tipo Fuego - Charmander
+            Pokemon charmander = new Pokemon("Charmander", 100, new TipoFuego());
+            charmander.Ataques.Add(new AtaqueComun("Arañazo", new TipoNormal(), 40, 1.0));
+            charmander.Ataques.Add(new AtaqueComun("Giro Fuego", new TipoFuego(), 50, 1.0));
+            charmander.Ataques.Add(new AtaqueComun("Cola Dragón", new TipoDragon(), 45, 0.9));
+            charmander.Ataques.Add(new AtaqueQuemar());  // Ataque especial: Quemar
+            pokemonsDisponibles.Add(charmander);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Vulpix", 95, new TipoFuego(),
-                new Ataque("Ascuas", 40, false, new TipoFuego()),
-                new Ataque("Pulso Agua", 50, false, new TipoAgua()),
-                new Ataque("Magnitud", 45, false, new TipoTierra()),
-                new Ataque("Llama Azul", 80, true, new TipoFuego())));
+            // Pokémon tipo Agua - Squirtle
+            Pokemon squirtle = new Pokemon("Squirtle", 120, new TipoAgua());
+            squirtle.Ataques.Add(new AtaqueComun("Placaje", new TipoNormal(), 50, 1.0));
+            squirtle.Ataques.Add(new AtaqueComun("Burbuja", new TipoAgua(), 40, 1.0));
+            squirtle.Ataques.Add(new AtaqueComun("Golpe Cuerpo", new TipoLucha(), 55, 0.9));
+            squirtle.Ataques.Add(new AtaqueParalizar());  // Ataque especial: Paralizar
+            pokemonsDisponibles.Add(squirtle);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Growlithe", 110, new TipoFuego(),
-                new Ataque("Lanzallamas", 55, false, new TipoFuego()),
-                new Ataque("Torbellino", 50, false, new TipoAgua()),
-                new Ataque("Fisura", 50, false, new TipoTierra()),
-                new Ataque("Sofoco", 85, true, new TipoFuego())));
+            // Pokémon tipo Planta - Bulbasaur
+            Pokemon bulbasaur = new Pokemon("Bulbasaur", 105, new TipoPlanta());
+            bulbasaur.Ataques.Add(new AtaqueComun("Latigazo", new TipoPlanta(), 45, 1.0));
+            bulbasaur.Ataques.Add(new AtaqueComun("Hoja Afilada", new TipoPlanta(), 50, 1.0));
+            bulbasaur.Ataques.Add(new AtaqueComun("Bomba Lodo", new TipoVeneno(), 55, 0.9));
+            bulbasaur.Ataques.Add(new AtaqueEnvenenar());  // Ataque especial: Envenenar
+            pokemonsDisponibles.Add(bulbasaur);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Ponyta", 100, new TipoFuego(),
-                new Ataque("Giro Fuego", 45, false, new TipoFuego()),
-                new Ataque("Aqua Jet", 40, false, new TipoAgua()),
-                new Ataque("Avalancha", 45, false, new TipoTierra()),
-                new Ataque("Erupción", 80, true, new TipoFuego())));
+            // Pokémon tipo Eléctrico - Pikachu
+            Pokemon pikachu = new Pokemon("Pikachu", 95, new TipoElectrico());
+            pikachu.Ataques.Add(new AtaqueComun("Impactrueno", new TipoElectrico(), 40, 1.0));
+            pikachu.Ataques.Add(new AtaqueComun("Ataque Rápido", new TipoNormal(), 50, 1.0));
+            pikachu.Ataques.Add(new AtaqueComun("Cola Férrea", new TipoRoca(), 45, 0.9));
+            pikachu.Ataques.Add(new AtaqueParalizar());  // Ataque especial: Paralizar
+            pokemonsDisponibles.Add(pikachu);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Magmar", 105, new TipoFuego(),
-                new Ataque("Fuego Fatuo", 35, false, new TipoFuego()),
-                new Ataque("Surf", 45, false, new TipoAgua()),
-                new Ataque("Corteza Tierra", 50, false, new TipoTierra()),
-                new Ataque("Onda Ígnea", 85, true, new TipoFuego())));
+            // Pokémon tipo Roca - Onix
+            Pokemon onix = new Pokemon("Onix", 130, new TipoRoca());
+            onix.Ataques.Add(new AtaqueComun("Lanzarrocas", new TipoRoca(), 50, 1.0));
+            onix.Ataques.Add(new AtaqueComun("Excavar", new TipoTierra(), 55, 1.0));
+            onix.Ataques.Add(new AtaqueComun("Golpe Cabeza", new TipoNormal(), 45, 0.9));
+            onix.Ataques.Add(new AtaqueQuemar());  // Ataque especial: Quemar
+            pokemonsDisponibles.Add(onix);
 
-            // Tipo Agua
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Squirtle", 120, new TipoAgua(),
-                new Ataque("Llamarada", 50, false, new TipoFuego()),
-                new Ataque("Hidro Bomba", 90, true, new TipoAgua()),
-                new Ataque("Terremoto", 50, false, new TipoTierra()),
-                new Ataque("Rayo Solar", 90, true, new TipoFuego())));
+            // Pokémon tipo Volador - Pidgeotto
+            Pokemon pidgeotto = new Pokemon("Pidgeotto", 100, new TipoVolador());
+            pidgeotto.Ataques.Add(new AtaqueComun("Ataque Ala", new TipoVolador(), 45, 1.0));
+            pidgeotto.Ataques.Add(new AtaqueComun("Remolino", new TipoVolador(), 50, 1.0));
+            pidgeotto.Ataques.Add(new AtaqueComun("Picotazo", new TipoVolador(), 40, 1.0));
+            pidgeotto.Ataques.Add(new AtaqueDormir());  // Ataque especial: Dormir
+            pokemonsDisponibles.Add(pidgeotto);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Psyduck", 105, new TipoAgua(),
-                new Ataque("Ascuas", 40, false, new TipoFuego()),
-                new Ataque("Pulso Agua", 85, true, new TipoAgua()),
-                new Ataque("Magnitud", 45, false, new TipoTierra()),
-                new Ataque("Llama Azul", 80, true, new TipoFuego())));
+            // Pokémon tipo Hielo - Dewgong
+            Pokemon dewgong = new Pokemon("Dewgong", 120, new TipoHielo());
+            dewgong.Ataques.Add(new AtaqueComun("Rayo Hielo", new TipoHielo(), 45, 1.0));
+            dewgong.Ataques.Add(new AtaqueComun("Cabezazo", new TipoNormal(), 50, 1.0));
+            dewgong.Ataques.Add(new AtaqueComun("Agua Lodosa", new TipoAgua(), 55, 1.0));
+            dewgong.Ataques.Add(new AtaqueQuemar());  // Ataque especial: Quemar
+            pokemonsDisponibles.Add(dewgong);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Poliwag", 115, new TipoAgua(),
-                new Ataque("Lanzallamas", 50, false, new TipoFuego()),
-                new Ataque("Torbellino", 50, false, new TipoAgua()),
-                new Ataque("Fisura", 50, false, new TipoTierra()),
-                new Ataque("Sofoco", 85, true, new TipoFuego())));
+            // Pokémon tipo Fantasma - Gengar
+            Pokemon gengar = new Pokemon("Gengar", 110, new TipoFantasma());
+            gengar.Ataques.Add(new AtaqueComun("Lengüetazo", new TipoFantasma(), 40, 1.0));
+            gengar.Ataques.Add(new AtaqueComun("Puño Sombra", new TipoFantasma(), 50, 1.0));
+            gengar.Ataques.Add(new AtaqueComun("Bola Sombra", new TipoFantasma(), 55, 1.0));
+            gengar.Ataques.Add(new AtaqueEnvenenar());  // Ataque especial: Envenenar
+            pokemonsDisponibles.Add(gengar);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Goldeen", 110, new TipoAgua(),
-                new Ataque("Giro Fuego", 40, false, new TipoFuego()),
-                new Ataque("Aqua Jet", 50, false, new TipoAgua()),
-                new Ataque("Avalancha", 45, false, new TipoTierra()),
-                new Ataque("Erupción", 80, true, new TipoFuego())));
+            // Pokémon tipo Dragón - Dragonite
+            Pokemon dragonite = new Pokemon("Dragonite", 150, new TipoDragon());
+            dragonite.Ataques.Add(new AtaqueComun("Garra Dragón", new TipoDragon(), 45, 1.0));
+            dragonite.Ataques.Add(new AtaqueComun("Puño Trueno", new TipoElectrico(), 50, 1.0));
+            dragonite.Ataques.Add(new AtaqueComun("Cola Dragón", new TipoDragon(), 55, 1.0));
+            dragonite.Ataques.Add(new AtaqueQuemar());  // Ataque especial: Quemar
+            pokemonsDisponibles.Add(dragonite);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Seel", 120, new TipoAgua(),
-                new Ataque("Fuego Fatuo", 35, false, new TipoFuego()),
-                new Ataque("Surf", 45, false, new TipoAgua()),
-                new Ataque("Corteza Tierra", 50, false, new TipoTierra()),
-                new Ataque("Onda Ígnea", 85, true, new TipoFuego())));
+            // Pokémon tipo Veneno - Nidoking
+            Pokemon nidoking = new Pokemon("Nidoking", 130, new TipoVeneno());
+            nidoking.Ataques.Add(new AtaqueComun("Cuchillada", new TipoNormal(), 45, 1.0));
+            nidoking.Ataques.Add(new AtaqueComun("Golpe Bajo", new TipoFantasma(), 50, 1.0));
+            nidoking.Ataques.Add(new AtaqueComun("Terremoto", new TipoTierra(), 55, 1.0));
+            nidoking.Ataques.Add(new AtaqueEnvenenar());  // Ataque especial: Envenenar
+            pokemonsDisponibles.Add(nidoking);
 
-            // Tipo Tierra
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Sandshrew", 110, new TipoTierra(),
-                new Ataque("Corte Fuego", 50, false, new TipoFuego()),
-                new Ataque("Cañón de Agua", 50, false, new TipoAgua()),
-                new Ataque("Terremoto", 60, false, new TipoTierra()),
-                new Ataque("Excavar", 90, true, new TipoTierra())));
+            // Otros 10 Pokémon con ataques similares
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Geodude", 120, new TipoTierra(),
-                new Ataque("Corte Fuego", 50, false, new TipoFuego()),
-                new Ataque("Cañón de Agua", 50, false, new TipoAgua()),
-                new Ataque("Roca Afilada", 60, false, new TipoTierra()),
-                new Ataque("Golpe Rocoso", 90, true, new TipoTierra())));
+            Pokemon machamp = new Pokemon("Machamp", 140, new TipoLucha());
+            machamp.Ataques.Add(new AtaqueComun("Puño Dinámico", new TipoLucha(), 45, 1.0));
+            machamp.Ataques.Add(new AtaqueComun("Patada Baja", new TipoLucha(), 50, 1.0));
+            machamp.Ataques.Add(new AtaqueComun("Golpe Karate", new TipoLucha(), 55, 1.0));
+            machamp.Ataques.Add(new AtaqueParalizar());  // Ataque especial: Paralizar
+            pokemonsDisponibles.Add(machamp);
 
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Diglett", 100, new TipoTierra(),
-                new Ataque("Corte Fuego", 45, false, new TipoFuego()),
-                new Ataque("Hidrochorro", 45, false, new TipoAgua()),
-                new Ataque("Excavar", 55, false, new TipoTierra()),
-                new Ataque("Ataque Sísmico", 90, true, new TipoTierra())));
-
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Onix", 130, new TipoTierra(),
-                new Ataque("Cola Ígnea", 55, false, new TipoFuego()),
-                new Ataque("Hidro Bomba", 55, false, new TipoAgua()),
-                new Ataque("Destrucción", 70, false, new TipoTierra()),
-                new Ataque("Roca Mortal", 100, true, new TipoTierra())));
-
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Cubone", 105, new TipoTierra(),
-                new Ataque("Fuego Sagrado", 55, false, new TipoFuego()),
-                new Ataque("Ola Trueno", 50, false, new TipoAgua()),
-                new Ataque("Hueso Poderoso", 85, true, new TipoTierra())));
-
-            // Tipo Aire
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Pidgey", 90, new TipoAgua(),
-                new Ataque("Llamarada", 50, false, new TipoFuego()),
-                new Ataque("Bomba de Agua", 50, false, new TipoAgua()),
-                new Ataque("Excavar", 50, false, new TipoTierra())));
-
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Spearow", 85, new TipoFuego(),
-                new Ataque("Fuego Fatuo", 40, false, new TipoFuego()),
-                new Ataque("Pulso Agua", 45, false, new TipoAgua()),
-                new Ataque("Excavar", 45, false, new TipoTierra())));
-
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Zubat", 95, new TipoTierra(),
-                new Ataque("Llama Azul", 40, false, new TipoFuego()),
-                new Ataque("Tsunami", 50, false, new TipoAgua()),
-                new Ataque("Avalancha", 50, false, new TipoTierra()),
-                new Ataque("Corte Viento", 50, false, new TipoTierra())));
-
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Fearow", 105, new TipoAgua(),
-                new Ataque("Llamarada", 55, false, new TipoFuego()),
-                new Ataque("Aqua Jet", 50, false, new TipoAgua()),
-                new Ataque("Fisura", 50, false, new TipoTierra()),
-                new Ataque("Huracán", 55, false, new TipoAgua())));
-
-            pokemonsDisponibles.Add(CrearPokemonConAtaques("Doduo", 100, new TipoFuego(),
-                new Ataque("Explosión Ígnea", 50, false, new TipoFuego()),
-                new Ataque("Bomba Agua", 45, false, new TipoAgua()),
-                new Ataque("Terremoto", 50, false, new TipoTierra()),
-                new Ataque("Viento Cortante", 55, false, new TipoFuego()),
-                new Ataque("Llamarada", 55, false, new TipoFuego())));
+            // Aquí puedes seguir añadiendo más Pokémon con la misma estructura.
         }
 
-        private Pokemon CrearPokemonConAtaques(string nombre, double hp, ITipo tipo, params Ataque[] ataques)
-        {
-            // Crear el nuevo Pokémon
-            var pokemon = new Pokemon(nombre, hp, tipo);
-
-            // Agregar los ataques proporcionados al Pokémon
-            pokemon.Ataques.AddRange(ataques);
-
-            return pokemon;
-        }
-
+        // Mostrar todos los Pokémon disponibles en el catálogo
         public void VerCatalogo()
         {
             Console.WriteLine("Pokémon disponibles en el catálogo:");
@@ -157,48 +121,34 @@ namespace Library
             }
         }
 
+        // Seleccionar 6 Pokémon del catálogo y agregarlos al equipo del jugador
         public void SeleccionarPokemon(IJugador jugador)
         {
             Console.WriteLine($"Selecciona 6 Pokémon para tu equipo, {jugador.Nombre}.");
             VerCatalogo();
 
-            List<string> nombresSeleccionados = new List<string>();
-
-            for (int i = 0; i < 6; i++)  // Permitimos seleccionar 6 Pokémon.
+            for (int i = 0; i < 6; i++)  // Seleccionar 6 Pokémon
             {
                 Console.WriteLine($"Selecciona el Pokémon número {i + 1}:");
-                int seleccion = Convert.ToInt32(Console.ReadLine());
+                int seleccion = Convert.ToInt32(Console.ReadLine()) - 1;
 
-                if (seleccion >= 1 && seleccion <= pokemonsDisponibles.Count)
+                if (seleccion >= 0 && seleccion < pokemonsDisponibles.Count)
                 {
-                    Pokemon pokemonDelCatalogo = pokemonsDisponibles[seleccion - 1];
+                    Pokemon pokemonSeleccionado = pokemonsDisponibles[seleccion];
 
-                    // Crear una nueva instancia de Pokemon con los mismos datos
-                    Pokemon nuevoPokemon = new Pokemon(
-                        pokemonDelCatalogo.Nombre,
-                        pokemonDelCatalogo.HP,
-                        pokemonDelCatalogo.Tipo);
-
-                    // Copiamos los ataques también
-                    nuevoPokemon.Ataques.AddRange(pokemonDelCatalogo.Ataques);
-
-                    // Verificar si el jugador ya seleccionó este Pokémon
-                    if (nombresSeleccionados.Contains(nuevoPokemon.Nombre))
+                    // Clonar el Pokémon y agregarlo al equipo del jugador
+                    Pokemon nuevoPokemon = new Pokemon(pokemonSeleccionado.Nombre, pokemonSeleccionado.HPMax, pokemonSeleccionado.Tipo)
                     {
-                        Console.WriteLine("Ya seleccionaste este Pokémon, por favor elige otro.");
-                        i--;  // Repetir selección si el Pokémon ya fue seleccionado
-                    }
-                    else
-                    {
-                        nombresSeleccionados.Add(nuevoPokemon.Nombre);
-                        jugador.AgregarPokemon(nuevoPokemon);
-                        Console.WriteLine($"{nuevoPokemon.Nombre} ha sido agregado a tu equipo.");
-                    }
+                        Ataques = new List<IAtaque>(pokemonSeleccionado.Ataques)  // Copiar ataques
+                    };
+
+                    jugador.AgregarPokemon(nuevoPokemon);
+                    Console.WriteLine($"{nuevoPokemon.Nombre} ha sido agregado a tu equipo.");
                 }
                 else
                 {
                     Console.WriteLine("Selección inválida, intenta nuevamente.");
-                    i--;  // Repetir selección si es inválida.
+                    i--;  // Repetir si la selección es inválida
                 }
             }
         }

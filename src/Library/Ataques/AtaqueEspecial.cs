@@ -25,7 +25,7 @@ public abstract class AtaqueEspecial : IAtaque
             int ataqueFinal = ValorAtaque;
             if (Tipo != null)
             {
-                double efectividad = Tipo.CalcularAtaqueEfectivo(objetivo.Tipo);
+                double efectividad = objetivo.Tipo.CalcularAtaqueEfectivo(Tipo);
                 ataqueFinal = (int)(ValorAtaque * efectividad);
                 Console.WriteLine($"{Nombre} fue exitoso y causó {ataqueFinal} puntos de daño a {objetivo.Nombre}. (Efectividad: {efectividad}x)");
             }

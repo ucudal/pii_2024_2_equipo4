@@ -22,8 +22,8 @@ public class AtaqueComun : IAtaque
     {
         if (new Random().NextDouble() <= Precision)
         {
-            // Cálculo de efectividad aquí, fuera de la clase Pokemon
-            double efectividad = Tipo.CalcularAtaqueEfectivo(objetivo.Tipo);
+            // Cálculo de efectividad, fuera de la clase Pokemon
+            double efectividad = objetivo.Tipo.CalcularAtaqueEfectivo(Tipo);
             int ataqueFinal = (int)(ValorAtaque * efectividad);
 
             objetivo.RecibirAtaque(ataqueFinal);

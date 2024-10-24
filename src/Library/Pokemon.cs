@@ -43,14 +43,6 @@ namespace Library;
         }
     }
 
-
-    private string EfectividadTexto(double efectividad)
-    {
-        if (efectividad > 1) return "muy efectivo";
-        if (efectividad < 1) return "poco efectivo";
-        return "normal";
-    }
-
     public bool EstaVivo()
     {
         return HP > 0;
